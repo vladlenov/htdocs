@@ -1,0 +1,51 @@
+.basket-block {
+    vertical-align: middle;
+    width: 600px;
+    background: white;
+    padding: 10px;
+    border: solid 2px #2a88bd;
+    border-style: inset;
+    float: left;
+}
+
+.item {
+    float: left;
+    vertical-align: middle;
+
+
+}
+
+.button {
+    float: left;
+    vertical-align: middle;
+    margin-left: 10px;
+    margin-right:10px;
+
+}
+
+.input {
+    float: left;
+    width: 50px;
+
+}
+
+.image {
+    float: left;
+    width: 150px;
+    height: 100px;
+    vertical-align: middle;
+
+}
+
+
+.description {
+    float: left;
+    padding: 5px;
+    text-decoration-color: #2b542c;
+
+}
+
+.price {
+    float: left;
+    margin-left: 10px;
+}

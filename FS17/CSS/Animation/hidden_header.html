@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>transition-duration</title>
+    <style>
+        body { margin: 0; }
+        .menu {
+            position: absolute;
+            height: 50px; width: 100%;
+            background: lightblue;
+            border-bottom: 20px solid lightskyblue;
+            top: -50px;
+            /* Анимация */
+            -webkit-transition-property: top;
+            -moz-transition-property: top;
+            -o-transition-property: top;
+            transition-property: top;
+            -webkit-transition-duration: 1s;
+            -moz-transition-duration: 1s;
+            -o-transition-duration: 1s;
+            transition-duration: 1s;
+        }
+        .menu:hover { top: 0; }
+    </style>
+</head>
+<body>
+<div class="menu">
+    Наше меню
+</div>
+</body>
+</html>

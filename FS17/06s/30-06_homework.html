@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- Создать страницу рагистрации пользователя.
+Необходимые поля: Имя, Фамилия, Страна, эл. почта, логин, пароль.
+Необходимо предусмотреть валидацию формы средставми HTML5.
+Необходимо спозиционировать форму по центру (вертикально и горизонтально).
+Использовать JS нельзя. Верстка должна быть валидна. -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration form</title>
+    <link rel="stylesheet" href="30-06_homework.css">
+</head>
+<body>
+    <form class="form" id="reg_form" name="registration" lang="ru" method="post">
+        <fieldset title="Регистрация нового пользователя">
+            <legend>Регистрация пользователя</legend>
+            <p>
+            <input autofocus type="text" name="name" placeholder="Имя"required><br>
+            <input type="text" name="surname" placeholder="Фамилия" required><br>
+            <input list="country" type="text" name="country" placeholder="Страна"><br>
+            <datalist id="country">
+                <option>Украина</option>
+                <option>Беларусь</option>
+                <option>Грузия</option>
+                <option>Молдова</option>
+                <option>Польша</option>
+                <option>Венгрия</option>
+                <option>Румыния</option>
+                <option>Турция</option>
+                <option>Чехия</option>
+                <option>Словакия</option>
+                <option>Черногория</option>
+                <option>Буркина-Фасо</option>
+            </datalist>
+            <input type="email" placeholder="Электронная почта"><br>
+            <input maxlength="10" type="text" name="login"placeholder="Придумайте логин"><br>
+            <input maxlength="8" type="password" name="password" placeholder="Придумайте пароль"><br>
+        </p>
+        <p>Дополнительно<br>
+            <textarea rows="5" cols="33" name="about" placeholder="Расскажите кратко о себе"></textarea>
+        </p>
+        <p> <input type="submit" value="Отправить">
+            <input type="reset" value="Очистить"></p>
+        </fieldset>
+    </form>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>My WebSite</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script
+            src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+            integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+            crossorigin="anonymous"></script>
+</head>
+
+<body>
+<h2 class="h">Форма оформления заказа</h2>
+<form id="form_1" method="post" action="*" name="form_submit" onsubmit='return validate(this);'>
+    <p class="pad">
+        <label>ФИО:
+            <span>*</span>
+            <br>
+            <input type="text" name="FIO" required id="f1">
+        </label>
+    </p>
+    <p class="pad">
+        <label>E-mail:
+            <span>*</span>
+            <br>
+            <input type="email" name="e-mail" required id="e2">
+        </label>
+    </p>
+    <p class="pad">
+        <label>Телефон:
+            <br>
+            <input type="tel" name="phone" id="p3">
+        </label>
+    </p>
+    <p class="pad">
+        <label>Наименование товара:
+            <span>*</span>
+            <br>
+            <select name="select" id="s1">
+                <option value="1">Товар №1</option>
+                <option value="2">Товар №2</option>
+                <option value="3">Товар №3</option>
+            </select>
+        </label>
+    </p>
+    <p class="pad">
+        <label>Количество:
+            <span>*</span>
+            <br>
+            <input type="number" name="quantity" required id="k2">
+        </label>
+    </p>
+    <p class="pad">
+        <label>Дата доставки:
+            <span>*</span>
+            <br>
+            <input type="date" name="date" required id="d2">
+        </label>
+    </p>
+    <div class="sub">
+        <div class="footer">
+            <input type="submit" name="button1" id="submit" value="Отправить">
+            <input type="reset" name="button2" id="reset" value="Очистить">
+        </div>
+    </div>
+</form>
+
+    <script>
+         function validate(form) {
+             var fields = form.getElementsByTagName('input');
+             var validated = true;
+
+             for (var i = 0; i < fields.length; i++) {
+                 if (fields[i].type != 'submit') {
+                     validated = validated && (fields[i].value !== '');
+                 }
+             }
+
+             if (!validated) {
+                 alert('Необходимо заполнить все поля');
+             }
+
+             return validated;
+         }
+
+//    $(document).ready(function(){
+//        $("input[type='submit']").click(function(){
+//            var fields = $(this).parents("form").find("input").not("[type='submit']");
+//            var validated = true;
+//            for(var i = 0; i < fields.length; i++) {
+//                validated = validated && (fields[i].value !== '');
+//            }
+////            $(fields).each(function (index, element) {
+////                validated = validated && (element.value !== '');
+////            })
+//            if (!validated) {
+//                alert('Необходимо заполнить все поля');
+//            }
+//            return validated;
+//        });//    });
+
+         $('#submit').click(function(event){
+             event.preventDefault();
+             if($('#f1').val().length){
+                 return;
+             }
+
+             var objectData = {
+                 'fio':$('#f1').val(),
+                 'e-mail':$('#e2').val(),
+                 'phone':$('#p3').val(),
+                 'item':$('#s1').val(),
+                 'quantity':$('#k1').val(),
+                 'random':$('#d2').val()
+             }
+
+             console.log(objectData);
+         })
+
+
+//     $('#submit').click(function(){
+//        var fields = $('form_1').find("input").not("[type='submit']").attr('id');
+//        for(var i = 0; i < fields.length; i++) {
+//            console.log($(i).val());
+//            }
+//
+//     })
+
+
+    </script>
+
+</body>
+
+</html>

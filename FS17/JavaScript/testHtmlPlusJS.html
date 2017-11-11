@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All inclusive</title>
+</head>
+<body>
+
+<div class='comment-block'>
+
+
+</div>
+<div class = "comment-form">
+    <textarea class="comment-input" placeholder="Оставьте свой комментарий"></textarea><br>
+    <button value="Отправить" onclick="commentForm.addComment()">Добавить</button>
+    <button type="submit" value="Отметить"  onclick="coloring()">Закрасить</button>
+</div>
+<script>
+
+    class CommentForm {
+        constructor() {
+            this.textarea = null;
+            this.commentBlock = null;
+            this.commentId = 0;
+
+            this._getMainElements();
+        }
+
+        _getMainElements() {
+            this.textarea = this._findElement('.comment-input');
+            this.commentBlock = this._findElement('.comment-block');
+        }
+
+        _findElement(query) {
+            if (!document.querySelector(query)) {
+                throw new TypeError('Element is not found');
+            } else {
+                return document.querySelector(query);
+            }
+
+        }
+
+        _createCommentDomElement(message) {
+            var el = document.createElement('div');
+            el.innerText = message;
+            // el.onclick = fn
+            el.setAttribute('id', this.commentId.toString());
+            this.commentId++;
+            return el;
+        }
+
+        addComment() {
+            var inputValue = this.textarea.value;
+
+            if (inputValue) {
+                this.commentBlock.appendChild(this._createCommentDomElement(inputValue));
+                this.textarea.value = '';
+            }
+        }
+    }
+    // //
+    var commentForm = new CommentForm();
+
+</script>
+
+</body>
+</html>

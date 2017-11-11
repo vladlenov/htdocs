@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Домашнее задание от 12.06.2017</title>
+    <link rel="stylesheet" href="12-06_style.css">
+</head>
+<div>
+
+<!-- Форма обратной связи (поле ФИО. текстариа для ввода комментария) -->
+<div class="form">
+<form id="contact_data" name="contacts" method="post">
+    <p><b>Укажите Ваши ФИО:</b><br>
+        <input autofocus type="text" name="Surname" placeholder="Фамилия" required><br>
+        <input type="text" name="name" placeholder="Имя"required><br>
+        <input type="text" name="middle_name" placeholder="Отчество"><br>
+    </p>
+    <p>Комментарий<br>
+        <textarea rows="5" cols="33" form="contact_data" name="About" placeholder="Расскажите кратко о себе"></textarea>
+    </p>
+    <p> <input type="submit" value="Отправить">
+        <input type="reset" value="Очистить"></p>
+</form>
+</div>
+
+<!-- Список категорий с подкатегориями -->
+<div class="list">
+    <p>
+        <b>Team directory dnepr-07-06</b><br>
+        <ol>
+            <li>Vladimir Khvorostjankin
+                <ul type="disc">
+                   <li>Vladlen Ovchar</li>
+                   <li>Dmitry Kopaiev</li>
+                   <li>Dmitry Kopaiev</li>
+                   <li>Givshuk58 Andrey</li>
+                </ul>
+                <ul type="circle">
+                   <li>Kaline O</li>
+                </ul>
+                <ul type="disc">
+                   <li>@max</li>
+                </ul>
+                <ul type="circle">
+                   <li>Nelya S</li>
+                </ul>
+            </li>
+            <li>элемент списка #2</li>
+            <li>элемент списка #3</li>
+        </ol>
+    </p>
+</div>
+
+<!-- Написать формулу как на изображении http://htmlbook.ru/files/images/practical/13.png -->
+<div class="math_formula">
+    <p><b>Многочлен степени n</b> <br>
+    &fnof;(x)=a<sub>0</sub>+a<sub>1</sub>x+...+a<sub>n-1</sub>x<sup>n-1</sup>+a<sub>n</sub>x<sup>n</sup>
+    </p>
+</div>
+
+<!-- Написать таблицу со следующими полями (№ строки, код устройства, город, адрес устрановки, бранчи (клиентопотока, доходный), время доступности для клиента (будни, выходные) )
+вложенные данные сделать при помощи colspan rowspan. Наполнить таблицу 2-3 строками. И в футере сделать итого количество устройств. -->
+<div class="table">
+    <table cols="10" border="1" cellspacing='5' cellpadding='5' summary="Перечень установленного оборудования">
+        <thead align="center" style="background-color:skyblue">
+        <tr>
+            <td rowspan="2">№ строки</td>
+            <td rowspan="2">код устройства</td>
+            <td rowspan="2">город</td>
+            <td rowspan="2">адрес устрановки</td>
+            <td colspan="2">бранчи</td>
+
+            <td colspan="2">время доступности для клиента</td>
+        </tr>
+        <tr>
+
+            <td>клиентопотока</td>
+            <td>доходный</td>
+            <td>будни</td>
+            <td>выходные</td>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>34l5n34l5n</td>
+            <td>Днепр</td>
+            <td>пр. Яворницкого</td>
+            <td>данные 1</td>
+            <td>данные 1.1</td>
+            <td>да</td>
+            <td>нет</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>l5kn35nl34</td>
+            <td>Аугадугу</td>
+            <td>ав. Шарль'д'Голя</td>
+            <td>данные 2</td>
+            <td>данные 2.1</td>
+            <td>да</td>
+            <td>нет</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>34ltnn3o3j</td>
+            <td>Тороното</td>
+            <td>537 cross street</td>
+            <td>данные 3</td>
+            <td>данные 3.1</td>
+            <td>да</td>
+            <td>да</td>
+        </tr>
+
+        </tbody>
+        <tfoot bgcolor="skyblue">
+        <tr>
+            <td colspan="7"><b>Итого количество устройств</b></td>
+            <td><b>3</b></td>
+                    </tr>
+
+
+        </tfoot>
+    </table>
+
+
+
+</div>
+
+
+</body>
+</html>

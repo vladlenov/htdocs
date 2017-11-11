@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+	</head>
+	<body>
+		<button>Fetch JSON !!!</button>
+
+		<script>
+
+			var btn = document.querySelector('button');
+			btn.addEventListener('click', function () {
+            var XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest; // кросс-браузерность
+            var xhr = new XHR();
+//			var  xhr = 	new XMLHttpRequest();
+
+			xhr.open('GET', 'http://localhost:4000/recipes?name=hello', true);
+			xhr.send(); //  в скобках должно находиться тело запроса, у GET его нет
+
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState != 4) return; // 4 - статус "запрос завершён"
+
+                btn.innerHTML = 'Ready!';
+
+                if (xhr.status != 200) {
+                    //  обработать ошибку
+                    alert(xhr.status + ': ' + xhr.statusText); //  пример вывода: 404: Not Found
+                } else {
+                    console.log(JSON.parse(xhr.responseText)); // responseText -- текст ответа
+                    alert(xhr.getResponseHeader('Content-Type')); // вернём ещё и заголовок Content-Type для наглядности
+                    alert(xhr.getAllResponseHeaders()); // вернём все заголовки в учебных целях
+                }
+            }
+                btn.innerHTML = 'Loading...'; // (2)
+                btn.disabled = true;
+        })
+
+		</script>
+	</body>
+</html>

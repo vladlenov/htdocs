@@ -1,0 +1,49 @@
+<!--Сделать страницу, на которой у пользователя запрашивают логин и пароль.
+Если данные вверны, то вывести текст, что пользователь прошел проверку.
+Предусмотреть 2 разных логина и 2 разных пароля для них (один из паролей пусть будет 12345).
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ask and check data</title>
+</head>
+<body>
+<script>
+    'use strict';
+    //вариант с if
+    var userLogin = prompt('Введите свой логин: ');
+    var userPassword = prompt('Введите Ваш пароль: ');
+    if (userLogin === 'vladlen' || userLogin === 'vlad') {
+        if (userPassword === '123456' || userPassword === '1234') {
+            alert ('Проверка пройдена, добро пожаловать!');
+        }
+        else {
+            alert ('Извините, Вы допустили ошибку в пароле.');
+        }
+    }
+    else {
+        alert ('Извините, Вы допустили ошибку в логине.');
+    }
+
+     //вариант со switch - работает некорректно, не пойму где ошибка
+
+var userLogin = prompt('Введите свой логин: ');
+var userPassword = prompt('Введите Ваш пароль: ');
+switch (userLogin) {
+    case 'vladlen':
+    case 'vlad':
+        switch (userPassword) {
+            case '123456':
+            case '1234':
+            alert('Проверка пройдена, добро пожаловать!');
+            break;
+        default: alert('Извините, Вы ошиблись при вводе пароля.');
+    }
+    break;
+    default: alert('Извините, Вы ошиблись при вводе логина.');
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    padding: 0 10px;
+    color: yellow;
+}
+
+li {
+    display: inline;
+    margin-right: -4px;
+}
+
+nav {
+    background-color: cornflowerblue;
+}
+/* псевдоклассы */
+a:hover {
+    color: aqua;
+    background-color: blue;
+    font-size: large;
+}
+
+/* псевдоэлементы after и before*/
+
+a:after {
+    content: " | ";
+}
+
+
+/* Приоритет стилей
+ inline - style - link
+
+ принудительная установка приоритета с помощью !important после значения;
+
+
+@import "css-grid.css"; /* импорт стилей
+
+@media tv {
+    /* стили для устройств
+}
+
+/*
+Базовый синтаксис
+Селектор {свойства и значение};
+
+rgba = rgb + transparent (0.5 = 50%)
+
+1. Селектор тега
+li {
+background-color: #55555
+}
+
+2. атрибут class
+.class {
+}
+
+3.дочерний элемент
+корневой > дочений {
+}
+li > a {
+стиль
+}
+
+4.id="" в html
+# в css
+
+5. к соседним элемнетам
+a + a {
+стиль
+}
+
+6. Группировка через пробел
+li a (через пробел) применится ко всем а в li
+
+7.К атрибуту со значением
+[type="text"]
+
+css reset - подключение
+cssreset.com
+
+
+
+ */

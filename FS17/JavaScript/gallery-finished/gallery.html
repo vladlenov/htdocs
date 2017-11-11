@@ -1,0 +1,130 @@
+<html>
+	<head>
+		<title>Gallery</title>
+		<meta charset="utf8">
+		<style>
+			.gallery {
+				margin: 0 auto;
+				width: 500px;
+			}
+
+			.main-picture img {
+				max-width: 500px;
+			}
+
+			.thumbnails {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				text-align: center;
+			}
+
+			.thumbnails li {
+				display: inline-block;
+				padding: 10px;
+			}
+
+			.thumbnails img {
+				max-width: 50px;
+				max-height: 50px;
+			}
+
+			.gallery .prev-btn {
+				position: absolute;
+				bottom: 45%;
+				left: 20%;
+			}
+
+			.gallery .next-btn {
+				position: absolute;
+				bottom: 45%;
+				right: 20%;
+			}
+
+			.btns {
+				width: 100px;
+				height: 30px;
+			}
+		</style>
+
+	</head>
+	<body>
+
+		<div class="gallery">
+			<button class="prev-btn btns">Prev image</button>
+			<div class="main-picture">
+				<img src="img/england.jpg" alt="">
+			</div>
+			<button class="next-btn btns">Next image</button>
+
+			<ul class="thumbnails">
+				<li>
+					<img src="img/england.jpg" alt="">
+				</li>
+				<li>
+					<img src="img/france.jpg" alt="">
+				</li>
+				<li>
+					<img src="img/italy.jpg" alt="">
+				</li>
+				<li>
+					<img src="img/prussia.jpg" alt="">
+				</li>
+				<li>
+					<img src="img/russia.jpg" alt="">
+				</li>
+				<li>
+					<img src="img/scotland.jpg" alt="">
+				</li>
+				<li>
+					<img src="img/wales.jpg" alt="">
+				</li>
+			</ul>
+
+		</div>
+
+		<script type="text/javascript">
+			//			Your code will be here
+
+			const nextBtn = document.querySelector('.next-btn');
+			const prevBtn = document.querySelector('.prev-btn');
+			const mainPicture = document.querySelector('.main-picture img');
+			const thumbnails = document.querySelectorAll('.thumbnails li img');
+
+			nextBtn.addEventListener('click', () => {
+				for (let i = 0; i < thumbnails.length; i++) {
+					if (thumbnails[i] === thumbnails[thumbnails.length - 1]) {
+						mainPicture.setAttribute('src', thumbnails[0].getAttribute('src'));
+					} else if (mainPicture.getAttribute('src') === thumbnails[i].getAttribute('src')) {
+						mainPicture.setAttribute('src', thumbnails[i + 1].getAttribute('src'));
+						return;
+					}
+				}
+			});
+
+			prevBtn.addEventListener('click', () => {
+				for (let i = thumbnails.length - 1; i >= 0; i--) {
+					if (mainPicture.getAttribute('src') === thumbnails[0].getAttribute('src')) {
+						mainPicture.setAttribute('src', thumbnails[thumbnails.length - 1].getAttribute('src'));
+					} else if (mainPicture.getAttribute('src') === thumbnails[i].getAttribute('src')) {
+						mainPicture.setAttribute('src', thumbnails[i - 1].getAttribute('src'));
+						return;
+					}
+				}
+			});
+
+			mainPicture.addEventListener('click', (event) => {
+				for (let i = 0; i < thumbnails.length; i++) {
+					if (event.target.getAttribute('src') === thumbnails[i].getAttribute('src')) {
+						mainPicture.setAttribute('src', thumbnails[i + 1].getAttribute('src'));
+						return;
+					}
+					if (event.target.getAttribute('src') === thumbnails[thumbnails.length - 1].getAttribute('src')) {
+						mainPicture.setAttribute('src', thumbnails[0].getAttribute('src'));
+					}
+				}
+			});
+		</script>
+
+	</body>
+</html>

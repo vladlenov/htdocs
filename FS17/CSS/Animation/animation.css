@@ -1,0 +1,18 @@
+.div1 {
+    background-color: lawngreen;
+    box-shadow: 0 0 10px black ;
+}
+
+#circle {
+    width: 100px;
+    height: 100px;
+    background: coral;
+    border-radius: 50px;
+    position: relative;
+    animation: circle 3s infinite alternate;;
+}
+
+@keyframes circle {
+    from {left: 0px;}
+    to   {left: calc(100% - 100px);}
+}

@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<title>Random</title>
+		<meta charset="utf8">
+		<style>
+			.container {
+				width: 500px;
+				text-align: center;
+			}
+
+			.container .lightBulb-1 {
+				width: 150px;
+				height: 50px;
+				background-color: green;
+				float: left;
+			}
+
+			.container .lightBulb-2 {
+				width: 150px;
+				height: 50px;
+				background-color: red;
+				float: left;
+			}
+
+			.active {
+				border: 2px solid #dade00;
+			}
+		</style>
+
+	</head>
+	<body>
+		<div class="container">
+			<div class="lightBulb-1">
+			</div>
+			<div class="lightBulb-2">
+			</div>
+		</div>
+
+		<div class="btns-container">
+			<button class="red-btn">Active Red</button>
+			<button class="green-btn">Active Green</button>
+		</div>
+		<script type="text/javascript">
+			//			Your code will be here
+	document.querySelector('button').addEventListener('click', function (event)  {
+		var green = document.querySelector('.lightBulb-1');
+		var red = document.querySelector('.lightBulb-2');
+		green.classList.add('active');
+    })
+		</script>
+
+	</body>
+</html>

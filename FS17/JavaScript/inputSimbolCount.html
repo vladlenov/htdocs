@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="sms"> символов: <span id="result"></span>
+<script>
+    function showCount() {
+        result.innerHTML = sms.value.length;
+    }
+
+    sms.onkeyup = sms.oninput = showCount;
+    sms.onpropertychange = function() {
+        if (event.propertyName == "value") showCount();
+    }
+    sms.oncut = function() {
+        setTimeout(showCount, 0); // на момент oncut значение еще старое
+    };
+</script>
+</body>
+</html>

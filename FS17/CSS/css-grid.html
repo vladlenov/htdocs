@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learning CSS</title>
+    <link rel="stylesheet" href="css-grid.css">
+</head>
+<body>
+
+<!--<div class="grid">-->
+    <!--<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis neque nihil nostrum quos tenetur. Aliquid architecto aut, autem corporis deleniti fugiat iste laborum necessitatibus, officiis, omnis placeat quia repudiandae ullam.</div>-->
+    <!--<div>item-2</div>-->
+    <!--<div>item-3</div>-->
+    <!--<div>item-4</div>-->
+    <!--&lt;!&ndash;<div>item-5</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div>item-6</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div>item-7</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div>item-8</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div>item-9</div>&ndash;&gt;-->
+
+<!--</div>-->
+
+<!--Пример 4-->
+<!--<div class="grid">-->
+    <!--<header>Шапка</header>-->
+    <!--<article>-->
+        <!--<h1>Заголовок</h1>-->
+        <!--<p>Далеко-далеко за словесными горами в стране гласных, и согласных живут рыбные тексты.</p>-->
+    <!--</article>-->
+    <!--<aside>Сайдбар</aside>-->
+    <!--<footer>Подвал</footer>-->
+<!--</div>-->
+
+<!--Пример 5-->
+<div class="grid">
+    <div>item-1</div>
+    <div>item-2</div>
+    <div>item-3</div>
+    <div>item-4</div>
+    <div class="span-2">item-5</div>
+    <div class="span-2 subitems">
+        <div>Sub-1</div>
+        <div>Sub-2</div>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+<nav class="">
+    <button class="" type="button" aria-label="Toggle navigation">
+        <span class=""></span>
+    </button>
+    <div class="container">
+        <a class="" href="#">ProComfort.com.ua</a>
+        <div class="" id="navbarExample">
+            <ul class="">
+                <li class="">
+                    <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <?php if (true) { ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="reg.php">Registration</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.php">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="loginAdmin.php">Admin</a>
+                </li>
+                <?php } else { ?>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="basket.php"> Basket <?=getBasketCounter()?></a>
+                </li>
+                <? if (!empty($_SESSION['basket'])) { ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="basket.php?empty=del"> Empty </a>
+                </li>
+                <?}?>
+                <li class="nav-item">
+                    <a class="nav-link" href="exit.php">Exit</a>
+                </li>
+                <?if ($_SESSION['user_name'] == 'admin') {?>
+                <li class="nav-item">
+                    <a class="nav-link" href="adminCategories.php">AdminCategories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="adminGoods.php">AdminGoods</a>
+                </li>
+                <?php }} ?>
+            </ul>
+        </div>
+    </div>
+</nav>

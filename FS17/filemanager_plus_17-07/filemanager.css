@@ -1,0 +1,48 @@
+figure {
+    background: skyblue;
+    padding: 10px; /* Поля вокруг */
+    display: block; /* Блочный элемент */
+    width: 120px;
+    height: 80px;
+    float: left; /* Блоки выстраиваются по горизонтали */
+    margin: 0 10px 10px 0;
+    text-align: center;
+}
+
+figcaption {
+    color: darkblue;
+}
+
+.fileIcon {
+    width : 45px;
+    height: 55px;
+    float: left;
+    display: block;
+    margin-outside : 10px;
+    background-image: url('sprites.png');
+    background-repeat: no-repeat;
+}
+.folder {
+    background-position: -40px, 20px;
+}
+.pdf {
+    background-position: -10px, 20px;
+}
+.txt   {
+    background-position: 0px, 10px;
+}
+.php   {
+    background-position: -275px, 10px;
+}
+.html  {
+    background-position: 0px, 10px;
+}
+.js    {
+    background-position: 0px, 10px;
+}
+.css   {
+    background-position: -95px, 10px;
+}
+.png   {
+    background-position: -210px, 20px;
+}

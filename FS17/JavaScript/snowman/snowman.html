@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+	</head>
+	<body>
+		<img src="./snowman.png" alt="snowman">
+
+		<script>
+			//присваеваем переменной snowMan все свойста тега img
+			var snowMan = document.querySelector('img');
+			// устанавливаем обработчик события (функцию) на нажатие кнопки мыши
+			snowMan.addEventListener('mousedown', function(event) {
+			    //вставляем в конец дочерних элементов body элемент snowMan
+				document.body.appendChild(snowMan);
+				// вызываем функцию, определённую ниже
+				moveAt(event);
+				// Свойство position позволяет сдвигать элемент со своего обычного места.
+				// absolute - элемент исчезает с того места, где он должен быть и позиционируется заново
+				snowMan.style.position = 'absolute';
+				// чем выше zIndex, тем выше распологается блок
+				snowMan.style.zIndex = 1000;
+                // устанавливаем обработчик события (функцию mouseMoveListener???) на движение мыши
+                // не понял зачем мы используем дополнительную функцию mouseMoveListener, а не moveAt
+				document.addEventListener('mousemove', mouseMoveListener)
+                // устанавливаем обработчик события (функцию mouseMoveListener???) на отпускание клавиши мыши
+                // не понял зачем мы используем дополнительную функцию mouseMoveListener, а не moveAt
+				snowMan.addEventListener('mouseup', function() {
+					document.removeEventListener('mousemove', mouseMoveListener);
+				})
+			})
+
+			function moveAt(event) {
+			    // style возвращает объект, который дает доступ к стилю элемента на чтение и запись
+				// с его помощью изменяем координаты относительно относительно левого-верхнего узла документа
+				snowMan.style.left = event.pageX + 'px';
+				snowMan.style.top = event.pageY + 'px';
+			}
+			// не понял зачем мы создаём ещё одну функцию, которая просто выполняет другую?
+			function mouseMoveListener(event) {
+				moveAt(event)
+			}
+		</script>
+	</body>
+</html>
